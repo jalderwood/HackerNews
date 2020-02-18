@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.body.style.background = "white";
+
+      async function apiCall() {
+        let res = await fetch("http://localhost:3000/api/articles");
+
+        return res.json();
+      }
+
+      async function display() {
+        let res = await apiCall();
+        for (let x = 0; x < res.length; x++) {
+          const article = document.createElement("div");
+          article.innerHTML = res[x].name;
+
+          const link = document.createElement("a");
+          link.innerHTML = res[x].article;
+          link.href = res[x].article;
+
+          const button = document.createElement("button");
+          button.innerHTML = "Like";
+          //   button.setAttribute("OnClick");
+
+          const likeCount = document.createElement("p");
+          likeCount.innerHTML = res[x].likes;
+
+          document.body.appendChild(article);
+          document.body.appendChild(link);
+          document.body.appendChild(button);
+          document.body.appendChild(likeCount);
+        }
+      }
+
+      // async function makeDOM() {
+      //   let res = apiCall();
+
+      display();
+    </script>
+  </body>
+</html>

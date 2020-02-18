@@ -1,0 +1,22 @@
+{
+  "name": "hackernews",
+  "version": "0.0.9",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.9.1",
+    "mongoose-type-url": "^1.0.6",
+    "url": "^0.11.0"
+  },
+  "description": "Careerdevs project",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "Greg Lundberg",
+  "license": "ISC"
+}
