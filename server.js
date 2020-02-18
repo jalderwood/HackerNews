@@ -1,21 +1,22 @@
-const path = require('path');
+// const path = require('path');
 const createError = require('http-errors');
 const mongoose = require("mongoose");
 const express = require("express");
-const getTitle = require("../functions/getTitle");
+const app = express();
+const getTitle = require("./functions/getTitle");
 const router = express.Router();
-const { Article } = require("../models/article");
+const { Article } = require("./models/article");
 //routes
 const home = require("./routes/home");
 const forum = require("./routes/forum");
 const submit = require("./routes/submit");
 const articles = require("./routes/articles");
 
-console.log(result.parsed);
+// console.log(result.parsed);
 
-mongoose.connect(
-         `mongodb+srv://greg:${process.env.PASS}@cluster0-8vzth.mongodb.net/test?retryWrites=true&w=majority`,
-         { useUnifiedTopology: true, useNewUrlParser: true };)
+mongoose
+        .connect(`mongodb+srv://greg:${process.env.PASS}@cluster0-8vzth.mongodb.net/test?retryWrites=true&w=majority`,
+         { useUnifiedTopology: true, useNewUrlParser: true })
         .then(() => console.log("you are connected to bizbazdevoe"))
         .catch(err => console.log("Error - Not Connected - Error", err));
 
